@@ -10,32 +10,50 @@ _A rule engine for curating your Twitter followers._
 
 ## Usage
 
-Pull the repo:
+> To run this self-hosted service, you may need to
+> [apply to become a Twitter Developer](https://developer.twitter.com/en/apply/user.html),
+> and create an application under your account.
+>
+> This process takes about 5 minutes, and does not require manual approval
+> by Twitter.
 
-```bash
-git clone git@github.com:stevexie/tailguard && \
-cd tailguard
-```
+1. Pull the repo:
 
-Set environment variables:
 
-```bash
-cat <<EOF > ./server/.env.local
-TWITTER_TOKEN=...
-TWITTER_SECRET=...
-TWITTER_CONSUMER_KEY=...
-TWITTER_CONSUMER_SECRET=...
-EOF
-```
+    ```bash
+    git clone git@github.com:stevexie/tailguard && \
+    cd tailguard
+    ```
 
-Install dependencies, and start:
+2. Set environment variables:
 
-```bash
-npm install && \
-npm start
-```
+   ```bash
+   cat <<EOF > ./server/.env.local
+   TWITTER_TOKEN=...
+   TWITTER_SECRET=...
+   TWITTER_CONSUMER_KEY=...
+   TWITTER_CONSUMER_SECRET=...
+   EOF
+   ```
 
-## TODO:
+   > `TWITTER_TOKEN` and `TWITTER_SECRET` refer to personal access tokens for the
+   > app to perform actions on behalf of your account.
+   >
+   > `TWITTER_CONSUMER_KEY` and `TWITTER_CONSUMER_SECRET` are application keys
+   > that Twitter requires for third-party apps to make requests to the API.
+   >
+   > All keys and tokens can be found at:
+   > [Twitter Developer Apps](https://developer.twitter.com/en/apps) >
+   > [the app name you registered] > Keys and tokens.
+
+3. Install dependencies, and start:
+
+   ```bash
+   npm install && \
+   npm start
+   ```
+
+## TODO
 
 - [ ] Make the UI actually pleasant.
 - [ ] Show outcomes of recent invocations / errors on the UI.
