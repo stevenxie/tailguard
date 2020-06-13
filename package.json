@@ -1,0 +1,18 @@
+{
+  "name": "tailguard",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "lerna run --parallel start",
+    "lint": "lerna run lint",
+    "bootstrap": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lerna": "^3.22.1"
+  }
+}

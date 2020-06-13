@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "main": "main.js",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon main.js",
+    "lint": "prettier --write \"**/*.{js,jsx,json,md}\""
+  },
+  "dependencies": {
+    "@koa/router": "^9.0.1",
+    "apollo-server-koa": "^2.14.4",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "get-port": "^5.1.1",
+    "graphql": "^15.1.0",
+    "koa": "2",
+    "lodash": "^4.17.15",
+    "oauth-1.0a": "^2.2.6",
+    "require-from-string": "^2.0.2",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  }
+}
