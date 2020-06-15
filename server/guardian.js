@@ -40,7 +40,8 @@ class Guardian extends EventEmitter {
 
     this.client.get("followers/list", { count: 200 }, (err, { users }) => {
       if (err) {
-        return console.error(`guardian: failed to list followers: ${err}`);
+        console.error(`guardian: failed to list followers: ${err}`);
+        return;
       }
 
       this.cache = users.reduce((cache, user) => {
@@ -74,7 +75,7 @@ class Guardian extends EventEmitter {
     }
   };
 
-  handleFollower = (user) => {
+  handleFollower = async (user) => {
     this.emit("follower", user);
 
     const { rules } = this;
@@ -86,8 +87,9 @@ class Guardian extends EventEmitter {
     // If all rules are falsy, prune the user.
     for (let i = 0; i < rules.length; i++) {
       const rule = requireFromString(rules[i]);
-      const pass = rule(user, this.client);
-      if (pass) {
+      const result = rule(user, this.client);
+      const passed = result instanceof Promise ? await result : result;
+      if (passed) {
         this.emit("allow", user);
         return;
       }

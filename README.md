@@ -10,6 +10,8 @@ _A rule engine for curating your Twitter followers._
 
 ## Usage
 
+### Development
+
 > To run this self-hosted service, you may need to
 > [apply to become a Twitter Developer](https://developer.twitter.com/en/apply/user.html),
 > and create an application under your account.

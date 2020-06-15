@@ -29,7 +29,7 @@ const DEFAULT_RULE = `/**
  * @param {TwitterUser} follower - See https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/user-object
  * @param {TwitterClient} twitter - See https://github.com/ttezel/twit.
  */
-module.exports = function(follower, twitter) {
+module.exports = async function(follower, twitter) {
   const { screen_name } = follower;
   console.log(\`rule: handling user @\${screen_name}\`);
 
