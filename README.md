@@ -21,7 +21,7 @@ _A rule engine for curating your Twitter followers._
 
 
     ```bash
-    git clone git@github.com:stevexie/tailguard && \
+    git clone git@github.com:stevenxie/tailguard && \
     cd tailguard
     ```
 

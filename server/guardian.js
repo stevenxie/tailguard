@@ -34,7 +34,7 @@ class Guardian extends EventEmitter {
     setInterval(this.check, TAILGUARD_POLL_INTERVAL ?? 60000);
   }
 
-  cache = {};
+  cache = null;
   check = () => {
     console.log("guardian: checking for followers...");
 
@@ -46,7 +46,7 @@ class Guardian extends EventEmitter {
       this.cache = users.reduce((cache, user) => {
         const { id } = user;
         cache[id] = user;
-        if (!(id in this.cache)) this.handleFollower(user);
+        if (this.cache && !(id in this.cache)) this.handleFollower(user);
         return cache;
       }, {});
     });
